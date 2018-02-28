@@ -67,21 +67,23 @@ The web app makes AJAX requests to the servers. Some of the requests it makes fo
   <li>Required response: A JSON object that looks like following
     <pre>
       {
-        recommendedPrice: 1000,               //tl;dr It should contain a recommended price, returned by the system as well as
-        list: [                               //a list containing relevant search results
-          {
-            image: new Blob(),
-            productName: "Table",
-            location: "Baneshwor",
-            price: 1500
-          },
-          {
-            image: new Blob(),
-            productName: "Table",
-            location: "Baneshwor",
-            price: 1500
-          },
-        ]
+        searchResults: {
+          recommendedPrice: 1000,               //tl;dr It should contain a recommended price, returned by the system as well as
+          list: [                               //a list containing relevant search results
+            {
+              image: new Blob(),
+              productName: "Table",
+              location: "Baneshwor",
+              price: 1500
+            },
+            {
+              image: new Blob(),
+              productName: "Table",
+              location: "Baneshwor",
+              price: 1500
+            },
+          ]
+        },
       };
     </pre>
   </li>
