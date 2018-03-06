@@ -9,7 +9,7 @@ The web app makes AJAX requests to the servers. Some of the requests it makes fo
 <h2>1. Login</h2>
 <p>During login, after submission, a <code>POST</code> request is made to the server, with following settings</p>
 <ul>
-  <li>URL: '/login'</li>
+  <li>URL: <code>'/login'</code></li>
   <li>Method: <code>POST</code></li>
   <li>JSON Object: Contains username and password
   <pre>
@@ -31,7 +31,7 @@ The web app makes AJAX requests to the servers. Some of the requests it makes fo
 <h2>2. Instant Search</h2>
 <p>When typing in to search the items available, this AJAX request requests the server for relevent search results</p>
 <ul>
-  <li>URL: '/instantSearch'</li>
+  <li>URL: <code>'/instantSearch'</code></li>
   <li>Method: <code>GET</code></li>
   <li>This get method contains only one query item:
   <pre>
@@ -57,7 +57,7 @@ The web app makes AJAX requests to the servers. Some of the requests it makes fo
 <h2>3. Main Search</h2>
 <p>After finished typing and pressing enter, the item entered into the search input is sent asynchronously.</p>
 <ul>
-  <li>URL: '/search'</li>
+  <li>URL: <code>'/search'</code></li>
   <li>Method: <code>GET</code></li>
   <li>This get method contains only one query item:
   <pre>
@@ -91,26 +91,26 @@ The web app makes AJAX requests to the servers. Some of the requests it makes fo
 
 <h2>4. Posting of an item</h2>
 <p>After entering an item, and hitting submit, the entered info is sent by AJAX to the server. The configuration of this AJAX request is </p>
-<p style="background: red; color: white;">Not working properly. Ignore this part for now. For data, create fake ones for now.</p>
 <ul>
-  <li>URL: '/post'</li>
+  <li>URL: <code>'/post'</code></li>
   <li>Method: <code>POST</code></li>
   <li>A request containing a JSON object like following is sent:
   <pre>
     {
-      personname: "Person Name",
-      product: "Towel",
+      productName: "Towel",
       price: 300,
       location: "Baneshwor",
-      file: Image File                //Ignore this for now
+      productImage: imageFile     //The image of file would be here
     }
   </pre>
   </li>
-  <li>Required response: A JSON object that shows whether the post was successfully posted or not. It looks like following
+  <li>
+    To know how to read the productImage in the Django Backend, confer the following link:
+    <a href="https://stackoverflow.com/questions/33182517/django-how-can-i-get-each-file-in-formdata-when-i-use-ajax-to-send-to-the-serv">Read image from FormData in Django Backend</a>
+  </li>
+  <li>Required response: Any response could be sent. The output would appear as below, for which you have to check console.
     <pre>
-      {
-        success: "yes"              //Depends on success
-      }
+      "Response after posting porduct" + theResponseSentFromBackend
     </pre>
   </li>
 </ul>
